@@ -179,9 +179,22 @@ async function generatePlaylist(){
     }
     document.getElementById("spinner2").style.display = "block";
     songsList.innerHTML = '';
-    
+    if(categoryselected == 'reading'){
+        playlistTitle.textContent = "Your Customized Playlist For: Reading...";
+    }
+    else if(categoryselected == 'math'){
+        playlistTitle.textContent = "Your Customized Playlist For: Math/Science/Logic...";
+    }
+    else if(categoryselected == 'writing'){
+        playlistTitle.textContent = "Your Customized Playlist For: Creativity/Art...";
+    }
+    else if(categoryselected == 'memory'){
+        playlistTitle.textContent = "Your Customized Playlist For: Memorization...";
+    }
+    else if(categoryselected == 'relax'){
+        playlistTitle.textContent = "Your Customized Playlist For: Meditation/Relax/Sleep...";
+    }  
     const arraysongs = await getSongsDescription2(categoryselected,limit);
-    playlistTitle.textContent = `Playlist: ${arraysongs.length} songs for ${categoryselected}`;
     document.getElementById("spinner2").style.display = "none";
     currentplaylist = arraysongs;
     if(!arraysongs || arraysongs.length === 0){
@@ -197,7 +210,7 @@ async function generatePlaylist(){
         });
         songsList.appendChild(li);
         })
-    
+    playlistTitle.textContent = `Playlist: ${arraysongs.length} songs for ${categoryselected}`;
 
 }
 
