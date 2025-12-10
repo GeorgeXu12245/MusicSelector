@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Selector</title>
+  <link rel="stylesheet" href="musicselector.css" />
+</head>    
+
+<body>
+    <div id = "navbar">
+        <a href = "musicselector.html">Home Page</a>
+        <a href = "pastresearch.html">Past Research</a>
+        <a href = "aboutdeveloper.html">About the Developer</a>
+    </div>
+    <div class = "intro">
+        <h1 id = 'welcome' >Welcome to MusicSelector!</h1>
+        <h2 id = 'description'>Use MusicSelector to enhance your efficiency in doing any tasks.</h2>
+        <h2 id = 'tech'>Customized and advanced algorithms to keep you on task at all time. </h2>
+        <h2 id = 'base'>With over 10,000 songs from iTunes.</h2>
+    </div>
+    <div class = "choose category wrapper">
+        <h1 id = "choose command"> Choose the task you want to focus on now!</h1>
+        <div id = "category options">
+            <button class = "button" id = "Reading">Reading</button>
+            <button class = "button" id = "Math">Math/Science/Logic</button>
+            <button class = "button" id = "Writing">Creativity/Art</button>
+            <button class = "button" id = "Memorization">Memorization</button>
+            <button class = "button" id = "Relax">Meditation/Relax/Sleep</button>
+        </div>
+        
+    </div>
+    <div class = "choose timer wrapper">
+        <h1 id = "choose time"> How long do you want to study for?</h1>
+        <div class="time-input-wrapper">
+            <h2 id = "hours">Hours:</h2>
+            <input id = "input-time-hour" type = 'text' value = "00" placeholder="HH">
+            <h2 id = "minutes">Minutes:</h2>
+            <input id = "input-time-min" type = 'text' value = "10"  placeholder="MM">
+        </div>
+        <button class = "button" id = "confirmtime">Confirm</button>
+    </div>
+    <div id = "generate">
+            <button class = "button" id = "generateplaylist">Generate Your Playlist</button>
+            <div id="studyTimerBox">
+                <span>Congrats! You have studied for </span>
+                <span id="studyHours">00</span>h :
+                <span id="studyMinutes">00</span>m :
+                <span id="studySeconds">00</span>s
+            </div>
+    </div>
+    <div class = "player">
+        <div id = "spinner" style = "display:none;">Loading...</div>
+        <h2 id = "nowPlaying">Nothing playing</h2>
+        <div class = "controls">
+            <button class = "button" id = "playpause">Play/Pause▶️</button>
+            <button class = "button" id = "forward">Forward⏭️</button>
+            <button class = "button" id = "backward">Backward⏮️</button>
+            <button class = "button" id = "shuffle">Shuffle🔀</button>
+            <div id = "volumeSliderWrapper">Volume🔊
+                <input type="range" id="volumeSlider" min="0" max="100" value="100">
+            </div>
+            
+        </div>
+        <div id = "progressBarWrapper">
+            <div id = "progressBar"></div>
+        </div>
+
+        <div id = "timeInfo">
+            <span id = 'currentTime'>00:00</span>/
+            <span id = 'totalTime'>00:30</span>
+        </div>
+
+        <div id = "playlistTimeLeft"></div>
+    </div>
+    <div class = "playlist">
+        <div id = "title">
+            <h1 id = "titledisplay">Your Customized Playlist For:</h1>
+            <div id = "spinner2" style = "display:none;">Loading Playlist...</div>
+        </div>
+        <ol id = 'songs'></ol>
+
+    </div>
+
+</body>
+<script src="musicselector.js"></script>
+
+</html>
